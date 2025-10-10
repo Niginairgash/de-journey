@@ -38,29 +38,26 @@ from products
 */
 
 select student_id, subject, semester, score,
-    avg(score) over(partition by student_id order by subject) as avg_st_score,
-    max(score) over(partition by student_id order by subject),
-    row_number() over(partition by student_id order by semester),
-    
+    avg(score) over(partition by student_id) as avg_st_score,
+    max(score) over(partition by student_id ) as best_score,
+    row_number() over(partition by student_id order by semester, score) as rn,
+    score - avg(score) over(partition by student_id) as diff_from_st_avg
 from student_scores
 
 /*
 Задача 4: LAG/LEAD с разными смещениями
 Таблица: monthly_finance - month, revenue, expenses, profit
-
 Задача: Для каждого месяца показать:
-
-Выручку и прибыль
-
-Выручку за предыдущий месяц
-
-Выручку за тот же месяц год назад
-
-Прогноз выручки на следующий месяц
-
-Изменение прибыли compared to предыдущему месяцу
+- Выручку и прибыль
+- Выручку за предыдущий месяц
+- Выручку за тот же месяц год назад
+- Прогноз выручки на следующий месяц
+- Изменение прибыли compared to предыдущему месяцу
 */
+select month, revenue, expenses, profit,
+    lag(profit) over(partition by revenue order by month),
 
+    lead(profit) over(partition by revenue order by month)
 /*
 Задача 5: Комбинированный анализ с фильтрацией
 Таблица: customer_orders - order_id, customer_id, order_date, amount, category
