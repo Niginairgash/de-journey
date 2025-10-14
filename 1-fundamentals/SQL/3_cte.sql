@@ -68,7 +68,9 @@ with recursive rec_categories as(
     union all
 
     select 
-    c.id, c.name, c.parent_id
+        c.id, 
+        c.name, 
+        c.parent_id
     from categories c 
     inner join rec_categories rc on c.parent_id = rc.id
 )
