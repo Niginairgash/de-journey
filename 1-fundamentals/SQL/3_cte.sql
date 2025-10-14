@@ -2,7 +2,7 @@
 -- Author: Nigina Irgasheva
 -- Date: 2025-10-14
 -- Topic: CTE
--- Task: Найти общую сумму покупок каждого клиента
+-- Task: 
 -- Input Tables: orders
 -- Output Columns: customer_id, total_amount
 -- ===============================================================
