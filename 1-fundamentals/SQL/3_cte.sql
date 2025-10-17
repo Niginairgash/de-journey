@@ -2,7 +2,7 @@
 -- Author: Nigina Irgasheva
 -- Date: 2025-10-14
 -- Topic: CTE
--- Task: Создайте рекурсивный CTE, который генерирует последовательность чисел от 1 до 10.
+-- Task: Create a recursive CTE that generates a sequence of numbers from 1 to 10.
 -- ===============================================================
 with recursive numbers as(
     select 1 as n
@@ -12,7 +12,7 @@ with recursive numbers as(
 select * from numbers
 
 -- ===============================================================
--- Task: Найти всю цепочку подчинения для сотрудника 'Charlie' (включая его самого), показав всех менеджеров до самого верха.
+-- Task: Find the entire chain of command for employee 'Charlie' (including himself), showing all managers up to the top.
 -- Table: employees - id, name, manager_id 
 -- Input: INSERT INTO employees VALUES 
                 -- (1, 'Alice', NULL),
@@ -40,7 +40,7 @@ with recursive rec_employees as (
 select * from rec_employees order by level desc
 
 -- ===============================================================
--- Task: Найти все подкатегории категории 'Electronics' (включая вложенные любого уровня).
+-- Task: Find all subcategories of the 'Electronics' category (including nested ones of any level).
 -- Table:  categories - id, name, parent_id 
 -- Input: INSERT INTO categories VALUES
             -- (1, 'Electronics', NULL),
@@ -77,7 +77,7 @@ with recursive rec_categories as(
 select * from rec_categories
 
 -- ===============================================================
--- Task: Для каждой категории показать полный путь от корня через символ '→'.
+-- Task: For each category, show the full path from the root using the '→' symbol.
 -- Input Tables: categories
 -- Output Columns: 
             -- id | name        | path
@@ -113,7 +113,7 @@ select * from rec_categories
 
 
 -- ===============================================================
--- Task: Найти для каждого менеджера количество всех его прямых и косвенных подчиненных (включая подчиненных его подчиненных и т.д.).
+-- Task: Find for each manager the number of all his direct and indirect subordinates (including his subordinates' subordinates, etc.).
 -- Input Tables: employees
 -- Output: 
         -- manager_id | manager_name | subordinates_count
