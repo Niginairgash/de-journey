@@ -124,8 +124,15 @@ Employees:
 */
 -- Output : Mike-John, Sarah-John, Tom-Mike, Anna-Mike, David-Sarah, John-NULL
 -- ===============================================================
+--Show each employee with their manager's name
+select 
+    emp_name as employee , 
+    emp_name as manager 
+from Employees e
+left join Employees m
+on e.manager_id = m.emp_id
 
-
+--Find employees who earn more than their managers
 
 -- ===============================================================
 -- Task:  E-commerce Analysis
