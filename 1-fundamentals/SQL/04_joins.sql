@@ -23,8 +23,23 @@ Pizza-Coke, Pizza-Juice, Pizza-Water,
 Pasta-Coke, Pasta-Juice, Pasta-Water
 */
 -- ===============================================================
+-- Create all possible meal combinations (main course + drink)
+select 
+    main_course, 
+    drink 
+from MainCourses cross join Drinks
 
+-- Count how many total combinations exist
+select 
+    count(*) as total_combinations
+from MainCourses cross join Drinks
 
+-- List only combinations where main course is "Pizza"
+select 
+    main_course, 
+    drink 
+from MainCourses cross join Drinks
+where main_course = 'Pizza'
 -- ===============================================================
 -- Task: Students and Courses Enrollment
 -- Tables:
