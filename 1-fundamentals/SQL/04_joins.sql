@@ -3,6 +3,11 @@
 -- Date: 2025-10-20
 -- Topic: Cross Join, Full Outer Join , Self Join
 -- Task: Restaurant Menu Combinations
+/*
+    1. Create all possible meal combinations (main course + drink)
+    2. Count how many total combinations exist
+    3. List only combinations where main course is "Pizza"
+*/
 -- Tables:
 --    MainCourses:
 --    | id | main_course |
@@ -40,8 +45,15 @@ select
     drink 
 from MainCourses cross join Drinks
 where main_course = 'Pizza'
+
+
 -- ===============================================================
 -- Task: Students and Courses Enrollment
+/*
+    1. Find all students and their courses (include students without courses and courses without enrolled students)
+    2. Show students with no courses enrolled
+    3. Show courses that have no students enrolled
+*/
 -- Tables:
 /*
 Students:
@@ -63,12 +75,41 @@ Enrollments:
 
 */
 -- Output: Alice-Math, Alice-Science, Bob-Math, Carol-History, Dave-NULL, NULL-Biology
-
 -- ===============================================================
+-- Find all students and their courses (include students without courses and courses without enrolled students)
+select 
+    student_name,
+    course_name
+from Students s
+full outer join Enrollments e
+on s.student_id = e.student_id
 
+-- Show students with no courses enrolled
+select 
+    student_name,
+    course_name
+from Students s
+full outer join Enrollments e
+on s.student_id = e.student_id
+where course_name is null
+
+-- Show courses that have no students enrolled
+select 
+    student_name,
+    course_name
+from Students s
+full outer join Enrollments e
+on s.student_id = e.student_id
+where student_name is null
 
 -- ===============================================================
 -- Task: Employee Hierarchy
+/*
+    1. Show each employee with their manager's name
+    2. Find employees who earn more than their managers
+    3. Find all employees who are managers (hint: they appear in manager_id column)
+    4. Show the management chain for each employee (employee → manager → top manager)
+*/
 -- Table:
 /*
 Employees:
