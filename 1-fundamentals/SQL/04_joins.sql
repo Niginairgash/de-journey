@@ -124,3 +124,54 @@ Employees:
 */
 -- Output : Mike-John, Sarah-John, Tom-Mike, Anna-Mike, David-Sarah, John-NULL
 -- ===============================================================
+
+
+
+-- ===============================================================
+-- Task:  E-commerce Analysis
+/*
+    1. Create a "potential market" analysis showing all possible customer-product combinations (Cross Join)
+    2. Find all customers and their orders, including customers with no orders and orders with invalid customers (Full Outer Join)
+    3. If you had a "similar_products" table that references product_id, how would you find product pairs? (Self Join concept)
+*/
+-- Table:
+/*
+    Products:
+    | product_id | product_name | category  |
+    |------------|--------------|-----------|
+    | 1          | Laptop       | Electronics |
+    | 2          | T-Shirt      | Clothing    |
+    | 3          | Book         | Education   |
+    
+    Customers:
+    | customer_id | customer_name | city     |
+    |-------------|---------------|----------|
+    | 1           | Alex          | New York |
+    | 2           | Maria         | London   |
+    
+    Orders:
+    | order_id | customer_id | product_id |
+    |----------|-------------|------------|
+    | 101      | 1           | 1          |
+    | 102      | 1           | 2          |
+    | 103      | 2           | 1          |
+    | 104      | 3           | 4          | -- customer 3 doesn't exist
+*/
+-- ===============================================================
+
+
+-- ===============================================================
+-- Task:  Real-World Problem Solving
+-- Problem: A company wants to create a training schedule where each employee must complete each training module.
+/*
+    1. Generate the complete training schedule (all combinations)
+    2. Find which training modules each employee still needs to complete
+    3. Identify employees who haven't started any training
+*/
+-- Tables:
+/*
+    Employees: [E1, E2, E3]
+    Training_Modules: [M1, M2, M3, M4]
+    Completed_Training: [(E1, M1), (E1, M2), (E3, M1)]
+*/
+-- ===============================================================
