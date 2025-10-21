@@ -126,20 +126,39 @@ Employees:
 -- ===============================================================
 --Show each employee with their manager's name
 select 
-    emp_name as employee , 
-    emp_name as manager 
+    e.emp_name as employee , 
+    m.emp_name as manager 
 from Employees e
 left join Employees m
 on e.manager_id = m.emp_id
 
 --Find employees who earn more than their managers
+select 
+    e.emp_name as employee,
+    m.emp_name as manager
+from Employees e
+left join Employees m
+on e.manager_id = m.emp_id
+where e.salary > m.salary
 
+--Find all employees who are managers (hint: they appear in manager_id column)
+select 
+    e.emp_name as employee
+from Employees e
+inner join Employees m
+on e.manager_id = m.emp_id
+
+--Show the management chain for each employee (employee → manager → top manager)
+select 
+     e.emp_name||'→'|| coalesce(m.emp_name, 'Top manager') as manager
+from Employees e
+left join Employees m
+on e.manager_id = m.emp_id
 -- ===============================================================
 -- Task:  E-commerce Analysis
 /*
     1. Create a "potential market" analysis showing all possible customer-product combinations (Cross Join)
     2. Find all customers and their orders, including customers with no orders and orders with invalid customers (Full Outer Join)
-    3. If you had a "similar_products" table that references product_id, how would you find product pairs? (Self Join concept)
 */
 -- Table:
 /*
@@ -165,8 +184,24 @@ on e.manager_id = m.emp_id
     | 104      | 3           | 4          | -- customer 3 doesn't exist
 */
 -- ===============================================================
+--Create a "potential market" analysis showing all possible customer-product combinations (Cross Join)
+select 
+    product_name,
+    category,
+    customer_name,
+    city
+from Products cross join Customers
 
-
+--Find all customers and their orders, including customers with no orders and orders with invalid customers (Full Outer Join)
+select 
+    c.product_name,
+    c.category,
+    o.customer_name,
+    o.city
+from Customers c
+full outer join Orders o on c.customer_id = o.customer_id
+left join Products p on o.product_id = p.product_id
+    
 -- ===============================================================
 -- Task:  Real-World Problem Solving
 -- Problem: A company wants to create a training schedule where each employee must complete each training module.
