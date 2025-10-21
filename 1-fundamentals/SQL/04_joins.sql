@@ -217,3 +217,24 @@ left join Products p on o.product_id = p.product_id
     Completed_Training: [(E1, M1), (E1, M2), (E3, M1)]
 */
 -- ===============================================================
+--Generate the complete training schedule (all combinations)
+select *
+from Employees e
+cross join Training_Modules
+
+--Find which training modules each employee still needs to complete
+select 
+    e.emp_name,
+    t.module_name
+from Employees e
+cross join Training_Modules t
+left join Completed_Training ct on e.emp_id = ct.emp_id and t.module_id = ct.module_id
+where ct.module_id is null;
+
+-- Identify employees who haven't started any training
+select emp_name
+from Employees e
+where not exists (
+    select 1 from Completed_Training ct 
+    where ct.emp_id = e.emp_id
+)
