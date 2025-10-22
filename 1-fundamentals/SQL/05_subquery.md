@@ -15,6 +15,10 @@ Clauses that can be used with subqueries are:
 
 **Types of Subqueries**
 
+**1. Single-Row Subquery.** Subquery that returns a SINGLE value (like the average)
+  * Returns exactly one row as the result.
+  * Commonly used with comparison operators such as =, >, <
+
 Let's use a simple _employees_ table:
 
       |employee_id   |	 name   | salary  | department_id |
@@ -24,11 +28,9 @@ Let's use a simple _employees_ table:
       | 3	         | Charlie  | 82000   |  2            |
       | 4	         | Diana	| 45000	  |  2            |
 
-**1. Single-Row Subquery.** Subquery that returns a SINGLE value (like the average)
-  * Returns exactly one row as the result.
-  * Commonly used with comparison operators such as =, >, <
 
-    Example:
+
+Example:
     
         SELECT name, salary
         FROM employees
