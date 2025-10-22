@@ -1,4 +1,4 @@
-**Cross Join (Cartesian Product)**
+# Cross Join (Cartesian Product)
 
 **What it does:** Combines EVERY row from the first table with EVERY row from the second table.
 
@@ -23,7 +23,7 @@
 **Use case:** When you need all possible combinations (like creating a schedule).
 
 
-**Full Outer Join**
+# Full Outer Join
 
 **What it does:** Shows ALL records from BOTH tables, matching where possible and showing NULLs where no match exists.
 
@@ -53,7 +53,7 @@
 **Use case:** When you want to see all records from both tables, including unmatched ones.
 
 
-**Self Join**
+# Self Join
 
 **What it does:** Joins a table with ITSELF (usually to compare rows within the same table).
 
