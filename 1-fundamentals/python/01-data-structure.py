@@ -33,4 +33,16 @@ person = [                              # Create a list of dictionaries where ea
 print(person[1]["age"])                 # Print Sarah's age
 
 
+# TASK 6: Real World Problem
+# - Create a dictionary where keys are product names and values are quantities
+#  Products: "apples": 10, "bananas": 5, "oranges": 8
+#  Sell 3 apples (update the quantity)
+# - Add new product "grapes" with quantity 12
+# - Print all products that have less than 10 items
+products = {"apples": 10, "bananas": 5, "oranges": 8}     
+products["apples"] = 7                                     
+products["grapes"] = 12
+for product, quantity in Products.items():
+    if quantity < 10:
+        print(f"{product}: {quantity}")
 
