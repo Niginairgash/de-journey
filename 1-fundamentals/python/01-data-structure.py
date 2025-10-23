@@ -22,16 +22,15 @@ final_numbers = list(unique_numbers)    # Then convert back to a list
 
 # TASK 4: Fixed Coordinates
 position = (10, 20)                     # Create a tuple called position with coordinates (10, 20)
-position[0] = 15                        # Try to change the first coordinate to 15 # TypeError: 'tuple' object does not support item assignment
-print(position)                         # Print the position     
+#position[0] = 15                        # Try to change the first coordinate to 15 # TypeError: 'tuple' object does not support item assignment
+#print(position)                         # Print the position     
 
 #TASK 5: Mixed Data Structure
-person = {
-    {name "John", age 25},
-    {name "Sarah", age 30}
-} 
-print(age)
-# Create a list of dictionaries where each dictionary represents a person:
-# - First person: name "John", age 25
-# - Second person: name "Sarah", age 30
-# Print Sarah's age
+person = [                              # Create a list of dictionaries where each dictionary represents a person:
+    {"name" : "John", "age" : 25},      # - First person: name "John", age 25
+    {"name" : "Sarah", "age" : 30}      # - Second person: name "Sarah", age 30
+]
+print(person[1]["age"])                 # Print Sarah's age
+
+
+
