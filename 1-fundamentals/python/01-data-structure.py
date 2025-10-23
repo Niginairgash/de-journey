@@ -42,7 +42,7 @@ print(person[1]["age"])                 # Print Sarah's age
 products = {"apples": 10, "bananas": 5, "oranges": 8}     
 products["apples"] = 7                                     
 products["grapes"] = 12
-for product, quantity in Products.items():
+for product, quantity in products.items():
     if quantity < 10:
         print(f"{product}: {quantity}")
 
