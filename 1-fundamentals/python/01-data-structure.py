@@ -19,3 +19,8 @@ numbers = [1, 2, 2, 3, 4, 4, 4, 5]      # You have a list: [1, 2, 2, 3, 4, 4, 4,
 unique_numbers = set(numbers)           # Convert it to a set to remove duplicates
 final_numbers = list(unique_numbers)    # Then convert back to a list
 #print(final_numbers)                    # Print the result
+
+# TASK 4: Fixed Coordinates
+position = (10, 20) # Create a tuple called position with coordinates (10, 20)
+position[0] = 15 # Try to change the first coordinate to 15 (see what happens!)
+print(position)# Print the position
