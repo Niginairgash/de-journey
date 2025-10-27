@@ -64,8 +64,17 @@ matrix = [
 # solution:
 transpose = [[matrix[i][j] for i in range(len(matrix))] for j in range(len(matrix))]
 
-print(transpose)  
-# [[1, 4, 7], [2, 5, 8], [3, 6, 9]]
+#print(transpose)  # [[1, 4, 7], [2, 5, 8], [3, 6, 9]]
+
 #===============================================================
 # TASK 6: If-Else in Comprehension
 #===============================================================
+"""
+Convert numbers: even → "even", odd → "odd"
+"""
+numbers = [1, 2, 3, 4, 5, 6]
+
+# Solution:
+result = ["even", "odd" if numbers % 2 == 0 ]
+
+print(result)  # ['odd', 'even', 'odd', 'even', 'odd', 'even']
