@@ -75,6 +75,6 @@ Convert numbers: even → "even", odd → "odd"
 numbers = [1, 2, 3, 4, 5, 6]
 
 # Solution:
-result = ["even", "odd" if numbers % 2 == 0 ]
+result = ["even" if x % 2 == 0 else "odd" for x in numbers]
 
 print(result)  # ['odd', 'even', 'odd', 'even', 'odd', 'even']
