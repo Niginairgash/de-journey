@@ -44,6 +44,8 @@
         my_set = set([1, 2, 2, 3])
 
 
+
+
 **COMPREHENSION PATTERNS CHEAT SHEET**
 
        # List: [expression for item in iterable]
