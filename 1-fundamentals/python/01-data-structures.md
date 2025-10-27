@@ -42,4 +42,15 @@
         # Creation
         my_set = {1, 2, 3, 4}
         my_set = set([1, 2, 2, 3])
-      
+
+
+**COMPREHENSION PATTERNS CHEAT SHEET**
+
+       # List: [expression for item in iterable]
+       # List with condition: [expression for item in iterable if condition]
+       # List with if-else: [value_if_true if condition else value_if_false for item in iterable]
+       
+       # Dict: {key: value for item in iterable}
+       # Dict with condition: {key: value for item in iterable if condition}
+       
+       # Nested: [expression for outer in outer_loop for inner in inner_loop]
