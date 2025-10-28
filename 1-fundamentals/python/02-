@@ -1,0 +1,45 @@
+#===============================================================
+# Task 1: Create a calculator function that can handle any number of inputs:
+#===============================================================
+
+
+#===============================================================
+# Task 2: Create a function that builds a user profile:
+#===============================================================
+
+
+#===============================================================
+# Task 3: Sort this list of dictionaries in different ways:
+#===============================================================
+
+
+#===============================================================
+# Task 4: Combined *args and **kwargs. Create a logger function
+#===============================================================
+
+#===============================================================
+# Task 5: Lambda with Map/Filter. Process this data using lambda functions
+#===============================================================
+data = [15, 22, 8, 35, 42, 11, 27]
+
+# Your tasks using lambda:
+# 1. Square all numbers
+# 2. Filter numbers greater than 20
+# 3. Convert numbers to "Even" or "Odd" strings
+# 4. Calculate which numbers are divisible by 3
+
+#===============================================================
+# Task 7: Create a flexible email sender
+#===============================================================
+def send_email(*recipients, **email_data):
+    """
+    recipients: one or more email addresses
+    email_data: subject, body, cc, bcc, etc.
+    """
+    # Your code here
+    # Validate that subject and body are provided
+    # Format the output to show who the email is sent to and with what data
+
+# Test
+send_email("alice@email.com", "bob@email.com", 
+          subject="Meeting", body="Hello team!", cc="boss@email.com")
