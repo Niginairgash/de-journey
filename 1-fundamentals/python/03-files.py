@@ -1,6 +1,24 @@
+import datetime
+import csv
+import json
 #===============================================================
 # Task 1: Personal Diary System
 #===============================================================
+def add_diary_entry():
+    entry = input("Write your diary entry: ")
+    mood = input("How are feeling? (happy/sadsad/neutral): ")
+    t = datetime.date.today()
+    data = [entry, mood, t]
+
+    with open("diary_system.txt", "a+") as f:
+        f.write(f"{entry}, {mood}, {t} \n")
+    
+    with open("diary.csv", "a+", newline="") as f:
+        writer = csv.writer(f)
+        writer.writerows([data,])
+    
+add_diary_entry()
+
 
 
 #===============================================================
