@@ -4,6 +4,14 @@
 # Create a DataFrame for a book store with columns:
 # 'Title', 'Author', 'Price', 'Stock'
 # Add 3-4 books of your choice
+# Solution
+bookstore = pd.DataFrame({
+    'Title': ['Python Basics', 'Data Science Guide', 'Machine Learning'],
+    'Author': ['John Smith', 'Sarah Chen', 'Mike Johnson'],
+    'Price': [29.99, 39.99, 49.99],
+    'Stock': [15, 8, 12]
+})
+print(bookstore)
 
 #===============================================================
 # Task 2: DataFrame from Dictionary
