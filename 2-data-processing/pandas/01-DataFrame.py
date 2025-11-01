@@ -65,11 +65,14 @@ max_price.max()
 df = pd.read_csv("worldcities.csv")
 
 # 1. Find all cities with population greater than 5 million
-df[df['population']> 5000000]
+# largest_cities = df[df['population'] > 5000000]
+largest_cities = df.query('population > 5000000') # often more readable
 
 # 2. Find cities in Europe (UK and France)
-df[df['country'].isin(['UK', 'France'])]
-
+european_cities      = df[df['country'].isin(['UK', 'France'])]
+european_cities_v2   = df.query('country in ["UK", "France"]')
+european_cities_v3   = df[(df['country'] == 'UK') | (df['country'] == 'France')]
+print(european_cities_v3)
 #===============================================================
 # Task 6: Adding New Columns
 #===============================================================
