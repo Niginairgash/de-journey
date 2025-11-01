@@ -36,3 +36,62 @@ Think of selection like picking items from a menu or finding people in a photo a
       3    Diana   28   Paris   55000
 
 **Select Single Column - returns a Series**
+
+    # Method 1: Square brackets (most common)
+    names = df['Name']
+    print("Names column:")
+    print(names)
+    
+    # Method 2: Dot notation (works for simple column names)
+    ages = df.Age
+    print("\nAges column:")
+    print(ages)
+
+**Select Multiple Columns - returns a DataFrame**
+
+    # Select Name and City columns
+    name_city = df[['Name', 'City']]
+    print("Name and City columns:")
+    print(name_city)
+    
+    # Select Name, Age, and Salary
+    subset = df[['Name', 'Age', 'Salary']]
+    print("\nName, Age, Salary:")
+    print(subset)
+
+
+# 3. Selecting Rows
+**By Position with _.iloc[ ]_**
+
+    # Single row (position 2 - third row)
+    print("Third row:")
+    print(df.iloc[2])
+    
+    # Multiple rows (first 3 rows)
+    print("\nFirst 3 rows:")
+    print(df.iloc[0:3])
+    
+    # Specific rows (first and third)
+    print("\nFirst and third rows:")
+    print(df.iloc[[0, 2]])
+
+**By Label with _.loc[ ]_**
+
+    # Single row (index label 2)
+    print("Row with index 2:")
+    print(df.loc[2])
+    
+    # Multiple rows (index 1 and 3)
+    print("\nRows with index 1 and 3:")
+    print(df.loc[[1, 3]])
+
+# 4. Selecting Specific Cells (Row + Column)
+
+**Single Cell**
+    # Bob's Age using .loc (label-based)
+    bob_age = df.loc[1, 'Age']  # Row 1, Column 'Age'
+    print(f"Bob's age: {bob_age}")
+    
+    # Charlie's Salary using .iloc (position-based)
+    charlie_salary = df.iloc[2, 3]  # Row 2, Column 3
+    print(f"Charlie's salary: {charlie_salary}")
