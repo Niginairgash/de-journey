@@ -50,18 +50,25 @@ population = new_data['Population']
 # From your bookstore DataFrame:
 # 1. Extract the 'Price' column as a Series
 extract_price = bookstore['Price']
-print(extract_price)
+
 # 2. Calculate the average price
-avg_price = extract_price
+bookstore[bookstore['Price'] > 30]
+
 # 3. Find the most expensive book
+max_price = bookstore['Price']
+max_price.max()
 
 #===============================================================
 # Task 5: Filtering Data
 #===============================================================
 # From your cities DataFrame:
-# 1. Find all cities with population greater than 5 million
-# 2. Find cities in Europe (UK and France)
+df = pd.read_csv("worldcities.csv")
 
+# 1. Find all cities with population greater than 5 million
+df[df['population']> 5000000]
+
+# 2. Find cities in Europe (UK and France)
+df[df['country'].isin(['UK', 'France'])]
 
 #===============================================================
 # Task 6: Adding New Columns
