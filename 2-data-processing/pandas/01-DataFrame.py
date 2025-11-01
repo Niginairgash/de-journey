@@ -52,6 +52,7 @@ population = new_data['Population']
 extract_price = bookstore['Price']
 print(extract_price)
 # 2. Calculate the average price
+avg_price = extract_price
 # 3. Find the most expensive book
 
 #===============================================================
