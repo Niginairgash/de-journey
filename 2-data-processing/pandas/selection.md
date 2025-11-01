@@ -87,7 +87,7 @@ Think of selection like picking items from a menu or finding people in a photo a
 
 # 4. Selecting Specific Cells (Row + Column)
 
-**Single Cell**
+    **Single Cell**
     # Bob's Age using .loc (label-based)
     bob_age = df.loc[1, 'Age']  # Row 1, Column 'Age'
     print(f"Bob's age: {bob_age}")
