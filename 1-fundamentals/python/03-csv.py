@@ -128,26 +128,67 @@ def create_csv_use_dictwriter():
 #create_csv_bookstore()
 #create_csv_use_dictwriter()
 
+
+# Intermediate Level
 #===============================================================
-#
+# Task 4: Student Grade Calculator
 #===============================================================
+# Given students.csv:
+# Name,Math,Science,English
+# Alice,85,90,78
+# Bob,72,88,95
+# Charlie,90,85,92
+
+# Calculate and add a new column 'Average'
+# Save to 'students_with_grades.csv'
+
+#===============================================================
+# Task 5: Data Analysis
+#===============================================================
+# Using the bookstore CSV, calculate:
+# - Total value of inventory (price * quantity for each book)
+# - Most expensive book
+# - Total number of books in stock
+# - Average book price
+
+#===============================================================
+# Task 6: Data Cleaning
+#===============================================================
+# Clean this messy data:
+# Name,Age,Email
+# "Alice, Jr",25,alice@email.com
+# Bob,30,bob@email
+# Charlie,,charlie@email.com
+# Dana,35,INVALID_EMAIL
+
+# Remove rows with invalid data and fix formatting
+
+
+# Advanced Level
+#===============================================================
+# Task 7: CSV to JSON Converter
+#===============================================================
+# Convert your bookstore CSV to JSON format:
+# [
+#   {"Title": "Book1", "Author": "Author1", "Price": 20, "Quantity": 5},
+#   ...
+# ]
+# Save as 'books.json'
+
+#===============================================================
+# Task 8: Sales Report Generator
+#===============================================================
+# Create a sales system:
+# 1. Read products from 'products.csv' (ID,Name,Price,Stock)
+# 2. Process sales from 'sales.csv' (ProductID,Quantity,Date)
+# 3. Update stock levels and generate sales report
 
 
 #===============================================================
-#
+# Task 9: Data Merger
 #===============================================================
+# Merge two CSV files:
+# employees1.csv: ID,Name,Department
+# employees2.csv: ID,Salary,JoinDate
 
-
-#===============================================================
-#
-#===============================================================
-
-
-#===============================================================
-#
-#===============================================================
-
-
-#===============================================================
-#
-#===============================================================
+# Create merged_employees.csv with all information
