@@ -63,7 +63,11 @@ add_diary_entry()
 #===============================================================
 # Task 2: Student Grade Manager
 #===============================================================
-
+""" Requirements:
+* Store student data in JSON: {"name": "John", "grades": [85, 90, 78]}
+* Generate report cards in TXT format
+* Export class statistics to CSV (average, highest, lowest grades)
+"""
 #===============================================================
 # Task 3: Simple Inventory System
 #===============================================================
