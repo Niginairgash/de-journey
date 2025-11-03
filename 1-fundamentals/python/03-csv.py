@@ -86,7 +86,7 @@ def filter_people():
     for person in people:
         print(f"{person['Name']}")
 
-filter_people()
+#filter_people()
 
 
 #===============================================================
@@ -95,6 +95,38 @@ filter_people()
 # Create a new CSV file for a bookstore with columns:
 # Title,Author,Price,Quantity
 # Add at least 5 books and save to 'books.csv'
+def create_csv_bookstore():
+    bookstore = [
+        ["Title", "Author", "Price", "Quantity"],
+        ["To Kill a Mockingbird", "Harper Lee", 12.99, 15],
+        ["1984", "George Orwell", 10.50, 22],
+        ["Pride and Prejudice", "Jane Austen", 8.99, 18],
+        ["The Great Gatsby", "F. Scott Fitzgerald", 11.25, 12],
+        ["The Catcher in the Rye", "J.D. Salinger", 9.75, 8]
+    ]
+
+    with open('books.csv', 'w', newline='') as file:
+        writer = csv.writer(file)
+        writer.writerows(bookstore)
+
+# Create CSV file using csv.DictWriter
+def create_csv_use_dictwriter():
+    bookstore = [
+        {"Title": "To Kill a Mockingbird", "Author": "Harper Lee", "Price": 12.99, "Quantity": 15},
+        {"Title": "1984", "Author": "George Orwell", "Price": 10.50, "Quantity": 22},
+        {"Title": "Pride and Prejudice", "Author": "Jane Austen", "Price": 8.99, "Quantity": 18},
+        {"Title": "The Great Gatsby", "Author": "F. Scott Fitzgerald", "Price": 11.25, "Quantity": 12},
+        {"Title": "The Catcher in the Rye", "Author": "J.D. Salinger", "Price": 9.75, "Quantity": 8}
+    ]
+
+    with open('book.csv', 'w', newline='') as file:
+        fieldnames = ["Title", "Author", "Price", "Quantity"]
+        writer = csv.DictWriter(file, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerows(bookstore)
+
+#create_csv_bookstore()
+#create_csv_use_dictwriter()
 
 #===============================================================
 #
