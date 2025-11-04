@@ -1,4 +1,5 @@
 import csv
+import statistics
 # Beginner Level
 #===============================================================
 # Task 1: Basic Reading and Display
@@ -126,7 +127,7 @@ def create_csv_use_dictwriter():
         writer.writerows(bookstore)
 
 #create_csv_bookstore()
-#create_csv_use_dictwriter()
+create_csv_use_dictwriter()
 
 
 # Intermediate Level
@@ -157,6 +158,7 @@ def read_csv():
         student_grade = list(reader)
         
         for grades in student_grade:
+            # Calculate and add a new column 'Average'
             average = round((int(grades['Math']) + int(grades['Science']) + int(grades['English']))/3, 2)
             new_list.append({'Name'     : grades['Name'],
                              'Math'     : grades['Math'], 
@@ -164,17 +166,17 @@ def read_csv():
                              'English'  : grades['English'],  
                              'Average'  : average
                              })
+    # Save to 'students_with_grades.csv'
     with open('students_with_grades.csv', 'w', newline='') as file:
         fieldName = ['Name','Math','Science','English','Average']
         writer = csv.DictWriter(file, fieldnames=fieldName)
         writer.writeheader()
         writer.writerows(new_list)
-    
 
-# Calculate and add a new column 'Average'
-# Save to 'students_with_grades.csv'
-create_csv()
-read_csv()
+#create_csv()
+#read_csv()
+
+
 #===============================================================
 # Task 5: Data Analysis
 #===============================================================
@@ -184,6 +186,33 @@ read_csv()
 # - Total number of books in stock
 # - Average book price
 
+def get_book_csv():
+    with open('book.csv', 'r') as file:
+        reader = csv.DictReader(file)
+        books = list(reader)
+        for book in books:
+            book['total_value']= round((float(book['Price']) * float(book['Quantity'])), 2)
+    
+    # total_inventory = sum([float(book['Price']) * float(book['Quantity']) for book in books])
+    # print(f"${total_inventory:.2f}") 
+
+    # Most expensive book
+    print("==== Most expensive book ===")
+    max_price = max([float(item['Price']) for item in books])
+    name_book = [item['Title'] for item in books if float(item['Price']) == max_price][0]
+    print(f"The most expensive book is '{name_book}' at ${max_price}")
+   
+    print("\n===== Total number of books in stock===")
+    total = sum([int(item['Quantity']) for item in books])
+    print(total)
+
+    # Average book price
+    print("\n==== Average book price ==== ")
+    prices = [float(item['Price']) for item in books]
+    average = round(sum(prices) / len(prices) , 2)
+    print(average)
+    
+get_book_csv()
 #===============================================================
 # Task 6: Data Cleaning
 #===============================================================
