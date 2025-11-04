@@ -70,3 +70,21 @@ Here's a simple guide to working with text files in Python:
     with open("notes.txt", "r") as file:
         lines = file.readlines()
         print(f"The file has {len(lines)} lines")
+
+
+# 5. Important Tips
+* Always use _with open()_ - it automatically closes the file
+* _strip()_ removes spaces and newlines from strings
+* _\n_ creates a new line
+* If file doesn't exist, "w" or "a" will create it
+* If file doesn't exist, "r" will give an error
+
+# Quick Cheat Sheet:
+    # Reading
+    content = file.read()          # Read everything
+    line = file.readline()         # Read one line
+    lines = file.readlines()       # Read all lines as list
+    
+    # Writing
+    file.write("text")            # Write text
+    file.writelines(list)         # Write list of strings
