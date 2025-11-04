@@ -138,10 +138,43 @@ def create_csv_use_dictwriter():
 # Alice,85,90,78
 # Bob,72,88,95
 # Charlie,90,85,92
+def create_csv():
+
+    students_grades = [
+        ['Name','Math','Science','English'],
+        ['Alice',85,90,78],
+        ['Bob',72,88,95],
+        ['Charlie',90,85,92]
+    ]
+    with open('students.csv', 'w', newline='') as file:
+        writer = csv.writer(file)
+        writer.writerows(students_grades)
+        
+def read_csv():
+    new_list = []
+    with open('students.csv', 'r') as file:
+        reader = csv.DictReader(file)
+        student_grade = list(reader)
+        
+        for grades in student_grade:
+            average = round((int(grades['Math']) + int(grades['Science']) + int(grades['English']))/3, 2)
+            new_list.append({'Name'     : grades['Name'],
+                             'Math'     : grades['Math'], 
+                             'Science'  : grades['Science'], 
+                             'English'  : grades['English'],  
+                             'Average'  : average
+                             })
+    with open('students_with_grades.csv', 'w', newline='') as file:
+        fieldName = ['Name','Math','Science','English','Average']
+        writer = csv.DictWriter(file, fieldnames=fieldName)
+        writer.writeheader()
+        writer.writerows(new_list)
+    
 
 # Calculate and add a new column 'Average'
 # Save to 'students_with_grades.csv'
-
+create_csv()
+read_csv()
 #===============================================================
 # Task 5: Data Analysis
 #===============================================================
