@@ -8,9 +8,7 @@
 # Then convert back to Python and access one value
 import json
 
-# Starter for Task 1
 def basic_conversion():
-    # Your code here
     my_info = {
         "name": "Your Name",
         "age": 25,
