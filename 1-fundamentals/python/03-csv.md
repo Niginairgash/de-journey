@@ -73,23 +73,6 @@ CSV (Comma Separated Values) files are like simple tables or spreadsheets. Here'
         writer.writeheader()
         writer.writerows(students)
 
-# 4. Using pandas (Easier Method)
-
-    import pandas as pd
-    
-    # Read CSV
-    df = pd.read_csv('data.csv')
-    
-    # View data
-    print(df.head())
-    
-    # Filter data
-    adults = df[df['Age'] > 18]
-    
-    # Write to CSV
-    df.to_csv('new_data.csv', index=False)
-
-
 Key Points to Remember:
 * **Always use** with open() - it automatically closes the file
 * **Use** newline='' when writing to avoid blank lines
