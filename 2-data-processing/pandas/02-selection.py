@@ -62,14 +62,22 @@ last_cities = df.iloc[-5:]
 # Task 3.1: Specific Cells
 #===============================================================
 # 1. Get the population of the 10th city
+population_10 = df['population'].iloc[9]
+
 # 2. Get the country name of the 100th city
+country_100 = df['country'].iloc[99]
+
 # 3. Get latitude and longitude of the first city
+first_city_coords = df.iloc[0][['lat','lng']]
 
 #===============================================================
 # Task 3.2: Range Selections
 #===============================================================
 # 1. Select 'city' and 'population' for rows 20-30
+city_rows = df.iloc[20:31][['city', 'population']]
+
 # 2. Get city names and countries for the first 15 capital cities
+
 # 3. Select all columns for cities with population over 5 million (just show first 5)
 
 #===============================================================

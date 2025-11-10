@@ -61,7 +61,7 @@ max_price.max()
 #===============================================================
 # Task 5: Filtering Data
 #===============================================================
-# From your cities DataFrame:
+# From cities DataFrame:
 df = pd.read_csv("worldcities.csv")
 
 # 1. Find all cities with population greater than 5 million
