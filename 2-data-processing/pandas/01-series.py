@@ -6,6 +6,8 @@ import pandas as pd
 # Use default index
 # Print the series
 temperatures = pd.Series([25, 28, 30, 22, 26])
+print(temperatures)
+
 #===============================================================
 # Task 2: Series with Custom Index
 #===============================================================
@@ -13,3 +15,6 @@ temperatures = pd.Series([25, 28, 30, 22, 26])
 # Use index: ['Alice', 'Bob', 'Charlie', 'Diana', 'Eve']
 # Print the series and access Diana's grade
 
+student_grades = pd.Series([85, 92, 78, 96, 88], index=['Alice', 'Bob', 'Charlie', 'Diana', 'Eve'])
+print(student_grades)
+student_grades['Diana']
