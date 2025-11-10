@@ -1,19 +1,34 @@
-# Selection Tasks: worldcities.csv
-Level 1: Basic Column Selection
+import pandas as pd
 
+# Selection Tasks: worldcities.csv
+df = pd.read_csv('worldcities.csv')
+
+#Level 1: Basic Column Selection
 #===============================================================
 # Task 1.1: Select Single Columns
 #===============================================================
 # 1. Select only the 'city' column and show first 5 entries
+city = df['city'].head(5)
+
 # 2. Select the 'population' column and find its data type
+population = df['population']
+#print(type(population))
+
 # 3. Select the 'country' column and count unique countries
+country = df['country'].unique()
+#print(country)
 
 #===============================================================
 # Task 1.2: Select Multiple Columns
 #===============================================================
 # 1. Select 'city' and 'country' columns together
+country_with_city = df[['city', 'country']]
+
 # 2. Select 'city', 'lat', 'lng' (geographic trio)
+geographic_trio = df[['city', 'lat', 'lng']]
+
 # 3. Select 'city_ascii', 'iso2', 'iso3' (identification columns)
+identification_columns = df[['city_ascii', 'iso2', 'iso3']]
 
 
 # Level 2: Row Selection
@@ -21,15 +36,25 @@ Level 1: Basic Column Selection
 # Task 2.1: Position-based Selection (.iloc)
 #===============================================================
 # 1. Select the first 10 rows of the dataset
+first_10 = df.iloc[0:10]
+
 # 2. Select rows 50 to 60 (inclusive of 50, exclusive of 60)
+rows_50_60 = df.iloc[50:60]
+
 # 3. Select every 100th row (0, 100, 200, ...)
+every_100th = df.iloc[::100]
 
 #===============================================================
 # Task 2.2: Specific Row Access
 #===============================================================
 # 1. Get the 25th city's complete information
+city_25 = df.iloc[24]
+
 # 2. Select only rows 15, 30, and 45
+specific_cities = df.iloc[[15,30,45]]
+
 # 3. Get the last 5 cities in the dataset
+last_cities = df.iloc[-5:]
 
 
 # Level 3: Combined Row & Column Selection
