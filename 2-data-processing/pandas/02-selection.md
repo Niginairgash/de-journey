@@ -95,3 +95,10 @@ Think of selection like picking items from a menu or finding people in a photo a
     # Charlie's Salary using .iloc (position-based)
     charlie_salary = df.iloc[2, 3]  # Row 2, Column 3
     print(f"Charlie's salary: {charlie_salary}")
+
+**Key Learning Points:**
+- df[['col1', 'col2']] - Double brackets for multiple columns → returns DataFrame
+- df.iloc[start:end] - Position-based slicing (end is exclusive)
+- df.iloc[[1, 5, 10]] - Specific positions using list of indices
+- df.iloc[-5:] - Negative indexing for last rows
+- df.iloc[::100] - Step selection (every 100th row)
