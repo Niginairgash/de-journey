@@ -7,19 +7,23 @@ Think of a **Series** as a single, labeled bookshelf.
 
   Example as a Python list:
 
-      # A list of fruits
-      fruits_list = ['Apple', 'Banana', 'Cherry']
-
+```python
+# A list of fruits
+fruits_list = ['Apple', 'Banana', 'Cherry']
+```
   Example as a Pandas Series:
 
-      import pandas as pd
+```python
+import pandas as pd
 
-      # Creating a Series
-      fruits = pd.Series(['Apple', 'Banana', 'Cherry'])
-      print(fruits)
-
+# Creating a Series
+fruits = pd.Series(['Apple', 'Banana', 'Cherry'])
+print(fruits)
+```
 
   We can even use custom labels:
+```python
+fruits = pd.Series(['Apple', 'Banana', 'Cherry'], index=['a', 'b', 'c'])
+print(fruits)
+```
 
-      fruits = pd.Series(['Apple', 'Banana', 'Cherry'], index=['a', 'b', 'c'])
-      print(fruits)
