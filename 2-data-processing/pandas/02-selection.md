@@ -1,7 +1,7 @@
 #  Pandas Selection: The Simple Guide
 Think of selection like picking items from a menu or finding people in a photo album!
 
-# 1. The Two Main Ways to Select
+## 1. The Two Main Ways to Select
 **By Label (using ._loc[ ]_)**
 * Like using someone's name to find them
 * "Show me Sarah's grades"
@@ -12,9 +12,9 @@ Think of selection like picking items from a menu or finding people in a photo a
 * "Show me the 3rd person in line"
 * "Get the first 5 rows"
 
- # 2. Selecting Columns (Easiest!)
+ ## 2. Selecting Columns (Easiest!)
 
-     import pandas as pd
+     ```import pandas as pd
   
     # Sample DataFrame
     data = {
@@ -26,7 +26,7 @@ Think of selection like picking items from a menu or finding people in a photo a
     
     df = pd.DataFrame(data)
     print(df)
-
+```
   Output:
   
             Name  Age    City  Salary
@@ -60,7 +60,7 @@ Think of selection like picking items from a menu or finding people in a photo a
     print(subset)
 
 
-# 3. Selecting Rows
+## 3. Selecting Rows
 **By Position with _.iloc[ ]_**
 
     # Single row (position 2 - third row)
@@ -85,7 +85,7 @@ Think of selection like picking items from a menu or finding people in a photo a
     print("\nRows with index 1 and 3:")
     print(df.loc[[1, 3]])
 
-# 4. Selecting Specific Cells (Row + Column)
+## 4. Selecting Specific Cells (Row + Column)
 
     **Single Cell**
     # Bob's Age using .loc (label-based)
