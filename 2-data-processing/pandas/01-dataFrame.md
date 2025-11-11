@@ -5,19 +5,19 @@ Think of a DataFrame as the entire library, which is made of multiple bookshelve
 * **It has Row Labels and Column Labels:** Each row has an index, and each column has a name.
 * **Each column is a Series!** The "Fruits" column is one Series, the "Prices" column is another Series. A DataFrame is a collection of Series that share the same index.
 
-  Example as a Pandas DataFrame:
-
-      # Creating a DataFrame from a dictionary
-      data = {
-          'Fruit': ['Apple', 'Banana', 'Cherry'],
-          'Price': [1.50, 0.80, 3.00],
-          'Quantity': [10, 15, 5]
-      }
+Example as a Pandas DataFrame:
+```python
+# Creating a DataFrame from a dictionary
+data = {
+  'Fruit': ['Apple', 'Banana', 'Cherry'],
+  'Price': [1.50, 0.80, 3.00],
+  'Quantity': [10, 15, 5]
+}
       
-      df = pd.DataFrame(data)
-      print(df)
-
-    You can think of it as:
-    * The entire thing _df_ is a DataFrame.
-    * The column _df['Fruit']_ is a Series.
-    * The column _df['Price']_ is another Series.
+df = pd.DataFrame(data)
+print(df)
+```
+You can think of it as:
+* The entire thing `df` is a DataFrame.
+* The column `df['Fruit']` is a Series.
+* The column `df['Price']` is another Series.
