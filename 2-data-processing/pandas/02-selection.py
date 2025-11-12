@@ -77,9 +77,17 @@ first_city_coords = df.iloc[0][['lat','lng']]
 city_rows = df.iloc[20:31][['city', 'population']]
 
 # 2. Get city names and countries for the first 15 capital cities
+capitals = df[df['capital'].notna()].head(15)
 
 # 3. Select all columns for cities with population over 5 million (just show first 5)
+population_over_5_million = df[df['population'] > 5000000]
+print(population_over_5_million)
 
-#===============================================================
-# 
-#===============================================================
+# Get specific cells using .loc for row,column pairs
+specific_values = {
+  '10th_city_pop' : df.loc[9, 'population'],
+  '50th_city_country' : df.loc[49, 'country'],
+  '100th_city_lat' : df.loc[99, 'lat']
+}
+for key, value in specific_values.items():
+  print(f"{key}: {value}")
