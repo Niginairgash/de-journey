@@ -1,6 +1,4 @@
-erimport pandas as pd
-
-
+import pandas as pd
 
 #===============================================================
 # Task 1: Basic Setup
