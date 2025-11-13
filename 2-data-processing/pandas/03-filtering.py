@@ -1,4 +1,4 @@
-import pandas as pd
+erimport pandas as pd
 
 
 
@@ -25,6 +25,10 @@ print(df)
 2.2 Find all products in the 'Electronics' category  
 2.3 Find products with stock less than 50
 """
+expensive_products = df[df['Price'] > 200]
+
+category_electronics = df[df['Category']=='Electronics']
+
 
 #===============================================================
 # Task 3: Multiple Conditions**
