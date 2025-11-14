@@ -11,8 +11,8 @@ data = {
     'Rating': [4.5, 4.2, 4.0, 4.7, 4.8, 4.3, 4.6]
 }
 df = pd.DataFrame(data)
-print("Original DataFrame:")
-print(df)
+#print("Original DataFrame:")
+#print(df)
 
 
 #===============================================================
@@ -23,10 +23,12 @@ print(df)
 2.2 Find all products in the 'Electronics' category  
 2.3 Find products with stock less than 50
 """
+print("Products with Price greater than $200 ")
 expensive_products = df[df['Price'] > 200]
-
+print(expensive_products)
+print("\n Products in the 'Electronics' category")
 category_electronics = df[df['Category']=='Electronics']
-
+print(category_electronics)
 
 #===============================================================
 # Task 3: Multiple Conditions**
