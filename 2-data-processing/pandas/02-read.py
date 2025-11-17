@@ -45,7 +45,6 @@ Shanghai;25500000;China
 # 1. Read products.tsv using sep='\t'
 # 2. Read data.txt using sep=';'
 # 3. Compare the shapes of both DataFrames
-"""
 
 
 # Task 3: Real Excel File Practice
