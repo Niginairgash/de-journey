@@ -129,11 +129,13 @@ ID,Name,Join_Date,Salary
 
 
 # Solution Checklist
+"""
 After each task, ask yourself:
 - [ ] Did I successfully read the file?
 - [ ] Can I see the first few rows?
 - [ ] Do I understand the structure (rows, columns)?
 - [ ] Did I handle any file format issues?
+"""
 
 # Bonus Challenge**
 Create your own CSV file with data about something you're interested in (movies, games, sports stats) and read it into Pandas!
