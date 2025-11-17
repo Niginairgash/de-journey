@@ -127,7 +127,6 @@ ID,Name,Join_Date,Salary
 # 4. Read only employees with Salary > 52000
 
 
----
 
 # Solution Checklist
 After each task, ask yourself:
