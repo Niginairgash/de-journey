@@ -100,7 +100,7 @@ Some footer text here
 """
 Download a real dataset and practice:
 1. Go to [Kaggle](https://www.kaggle.com/datasets) and download any small CSV dataset
-2. Or use this sample URL: https://raw.githubusercontent.com/datasets/iris/master/data/iris.csv
+2. Or use this sample URL: https://github.com/Niginairgash/de-journey/blob/main/2-data-processing/pandas/iris.csv
 """
 # Tasks:
 # 1. Read the dataset from your computer
