@@ -138,4 +138,4 @@ After each task, ask yourself:
 """
 
 # Bonus Challenge**
-Create your own CSV file with data about something you're interested in (movies, games, sports stats) and read it into Pandas!
+# Create your own CSV file with data about something you're interested in (movies, games, sports stats) and read it into Pandas!
