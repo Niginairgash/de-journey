@@ -87,7 +87,7 @@ url = "https://raw.githubusercontent.com/datasets/iris/master/data/iris.csv"
 
 
 ##  **Task 5: Advanced Formatting**
-**Save with custom formatting and conditions**
+# Save with custom formatting and conditions
 
 """python
 # Sample financial data
@@ -109,7 +109,7 @@ financial_data = pd.DataFrame({
 
 
 ##  **Task 6: Data Pipeline Simulation**
-**Complete data processing pipeline**
+# Complete data processing pipeline
 
 """python
 # Simulate a real-world scenario
@@ -135,8 +135,8 @@ raw_customers = pd.DataFrame({
 """
 
 
-## ⚙️ **Task 7: Error Handling & Best Practices**
-**Practice robust file operations**
+## **Task 7: Error Handling & Best Practices**
+# Practice robust file operations**
 
 """python
 # Create sample data
@@ -156,20 +156,23 @@ inventory = pd.DataFrame({
 
 
 ##  **Solution Checklist**
+"""
 After each task, verify:
 - [ ] File was created successfully
 - [ ] No unnecessary index column
 - [ ] Data looks correct when reopened
 - [ ] File sizes are reasonable
 - [ ] Special characters handled properly
+"""
 
 ##  **Bonus Challenge**
+"""
 Create your own dataset about something you're interested in (movies, games, sports) and:
 1. Save it in 3 different formats
 2. Create filtered versions
 3. Generate summary files
 4. Package everything in one Excel file with multiple sheets
-
+"""
 
 ## **Need Help? Use This Template:**
 """python
