@@ -161,7 +161,14 @@ ID,Name,Join_Date,Salary
 # 3. Handle missing values if any exist
 # 4. Read only employees with Salary > 52000
 
+employee_data = pd.read_csv(r"D:\Data engineering\de-journey\2-data-processing\pandas\employee_data.csv")
+employee_indexed = pd.read_csv(r"D:\Data engineering\de-journey\2-data-processing\pandas\employee_data.csv", index_col='ID')
+# employee_data.index = employee_data['ID']
 
+employee_type = pd.read_csv(r"D:\Data engineering\de-journey\2-data-processing\pandas\employee_data.csv", dtype={'Salary': float})
+print(f"\n Index of data: {employee_type.dtypes}")
+
+print(f"\n{employee_data.isnull().sum()}")
 
 # Solution Checklist
 """
