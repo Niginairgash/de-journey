@@ -20,7 +20,9 @@ Diana,20,B+,87
 # 3. Check how many rows and columns it has
 """
 
-
+df = pd.read_csv(r"D:\Data engineering\de-journey\2-data-processing\pandas\students.csv")
+first_3_rows = df.head(3)
+check = df.shape
 
 # Task 2: Handle Different File Formats
 # Create these files and read them:
@@ -46,6 +48,10 @@ Shanghai;25500000;China
 # 2. Read data.txt using sep=';'
 # 3. Compare the shapes of both DataFrames
 
+df_from_tsv = pd.read_csv(r"D:\Data engineering\de-journey\2-data-processing\pandas\products.tsv", sep="\t")
+df_from_txt = pd.read_csv(r"D:\Data engineering\de-journey\2-data-processing\pandas\data.txt", sep=";")
+is_shapes = df_from_tsv.shape == df_from_txt.shape
+
 
 # Task 3: Real Excel File Practice
 # Create an Excel file `sales.xlsx` with two sheets:
@@ -70,7 +76,20 @@ Date,Product,Amount
 # 2. Read the February sheet
 # 3. Read both sheets and combine them
 """
+print("January")
+df_january = pd.read_excel(r"D:\Data engineering\de-journey\2-data-processing\pandas\sales.xlsx", sheet_name='January')
+print(df_january)
+print(f"\n January shape:{df_january.shape}")
 
+print("\nFebruary")
+df_fabruary = pd.read_excel(r"D:\Data engineering\de-journey\2-data-processing\pandas\sales.xlsx", sheet_name="February")
+print(df_fabruary)
+print(f"\nFabruary shape: {df_fabruary.shape}")
+
+print("\nBoth sheets")
+combine_df = pd.concat([df_january, df_fabruary])
+print(combine_df)
+print(f"\nCombined shape:{combine_df.shape}")
 
 
 # Task 4: Problem Solving - Tricky Files
@@ -93,6 +112,14 @@ Some footer text here
 # 3. Read only specific columns: Name and Department
 """
 
+df_skip_lines = pd.read_csv(r"D:\Data engineering\de-journey\2-data-processing\pandas\messy_data.csv", skiprows=2)
+print(f"\n {df_skip_lines}")
+
+df_skip_last_lines = pd.read_csv(r"D:\Data engineering\de-journey\2-data-processing\pandas\messy_data.csv", skipfooter=2, engine='python')
+print(f"\n {df_skip_last_lines}")
+
+names_and_dep = pd.read_csv(r"D:\Data engineering\de-journey\2-data-processing\pandas\messy_data.csv")
+print(f"\nNames: \n {names_and_dep[['Name', 'Department']]}")
 
 
 # Task 5: File Exploration**
