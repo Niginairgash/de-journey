@@ -1,5 +1,5 @@
 ##  **Task 1: Basic File Saving**
-**Create and save a simple DataFrame**
+# Create and save a simple DataFrame
 
 """ python
 import pandas as pd
@@ -20,7 +20,7 @@ df = pd.DataFrame({
 
 
 ##  **Task 2: Save Processed Data**
-**Read, clean, and save modified data**
+# Read, clean, and save modified data
 
 """python
 # Start with this "messy" data
@@ -40,7 +40,7 @@ messy_sales = pd.DataFrame({
 
 
 ## 📊 **Task 3: Multiple DataFrames to One File**
-**Create and save multiple sheets in one Excel file**
+# Create and save multiple sheets in one Excel file
 
 """python
 # Create sample data for different departments
@@ -70,13 +70,13 @@ sales_data = pd.DataFrame({
 
 
 ##  **Task 4: Real Dataset Processing**
-**Download and process a real dataset**
+# Download and process a real dataset
 
 """python
 # Use this URL or any dataset you have
 url = "https://raw.githubusercontent.com/datasets/iris/master/data/iris.csv"
 
-# Your tasks:
+# todo:
 # 1. Read the iris dataset from the URL
 # 2. Save it locally as CSV
 # 3. Filter only 'setosa' species
