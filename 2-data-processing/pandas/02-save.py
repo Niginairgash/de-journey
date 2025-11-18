@@ -1,3 +1,8 @@
+import pandas as pd
+import os
+from datetime import datetime
+
+
 ##  **Task 1: Basic File Saving**
 # Create and save a simple DataFrame
 
@@ -17,7 +22,9 @@ df = pd.DataFrame({
 # 2. Save as Excel file
 # 3. Save as JSON with pretty formatting
 """
-
+def save_to_csv():
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    df.to_csv(f'backup_data_{timestamp}.csv', index=False)
 
 ##  **Task 2: Save Processed Data**
 # Read, clean, and save modified data
@@ -172,16 +179,4 @@ Create your own dataset about something you're interested in (movies, games, spo
 2. Create filtered versions
 3. Generate summary files
 4. Package everything in one Excel file with multiple sheets
-"""
-
-## **Need Help? Use This Template:**
-"""python
-import pandas as pd
-import os
-from datetime import datetime
-
-
-# Example of timestamped backup:
-timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-df.to_csv(f'backup_data_{timestamp}.csv', index=False)
 """
