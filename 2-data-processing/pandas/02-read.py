@@ -136,6 +136,14 @@ Download a real dataset and practice:
 #    - What are the column names?
 #    - What are the data types?
 
+salary_2024 = pd.read_csv(r"D:\Data engineering\de-journey\2-data-processing\pandas\Dataset salary 2024.csv")
+print(f"\n Information od data: {salary_2024.info}")
+
+rows_columns = salary_2024.shape
+print(f"\n Rows: {rows_columns[0]}, colunns: {rows_columns[1]}")
+
+print(f"\n Columns name: {salary_2024.columns.to_list()}")
+print(f"\n Type of data: {type(salary_2024)}")
 
 # Task 6: Advanced Challenges
 
