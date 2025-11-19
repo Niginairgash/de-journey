@@ -2,10 +2,10 @@ import pandas as pd
 import os
 from datetime import datetime
 import numpy as np
-
-##  **Task 1: Basic File Saving**
+#===============================================================
+#  Task 1: Basic File Saving
+#===============================================================
 # Create and save a simple DataFrame
-
 
 # Create a sample DataFrame
 df = pd.DataFrame({
@@ -15,12 +15,11 @@ df = pd.DataFrame({
     'Category': ['Electronics', 'Accessories', 'Accessories', 'Electronics']
 })
 
-""" python
 # todo:
 # 1. Save as CSV without index
 # 2. Save as Excel file
 # 3. Save as JSON with pretty formatting
-"""
+
 timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
 def save_to_csv():
     df.to_csv(f'backup_data_{timestamp}.csv', index=False)
@@ -33,8 +32,9 @@ def save_to_json():
     df.to_json(f"backup_data_{timestamp}.json", index=False)
     print("Successuful ")
 
-
-##  Task 2: Save Processed Data
+#===============================================================
+# Task 2: Save Processed Data
+#===============================================================
 # Read, clean, and save modified data
 
 messy_sales = pd.DataFrame({
@@ -68,15 +68,14 @@ print("\n === 3. Save the cleaned data as CSV")
 filtered_orders.to_csv("cleaned_sales_data.csv", index=False)
 print("✅ Saved cleaned data as cleaned_sales_data.csv")
 
-
 print("\n === 4.Save only Customer and Amount columns as Excel")
 messy_sales[['Customer', 'Amount']].to_excel("customer_amount.xlsx", index=False)
 print("✅ Saved Customer and Amount as customer_amount.xlsx")
 
-
+#===============================================================
 # Task 3: Multiple DataFrames to One File
+#===============================================================
 #Create and save multiple sheets in one Excel file
-
 
 # Create sample data for different departments
 hr_data = pd.DataFrame({
@@ -109,9 +108,10 @@ with pd.ExcelWriter("departments.xlsx") as writer:
     sales_data.to_excel(writer, sheet_name='Sales', index=False)
 print("✅ departments.xlsx created")
 
-##  **Task 4: Real Dataset Processing**
+#===============================================================
+#  Task 4: Real Dataset Processing
+#===============================================================
 # Download and process a real dataset
-
 
 # Use this URL or any dataset you have
 url = "https://raw.githubusercontent.com/Niginairgash/de-journey/main/2-data-processing/pandas/iris.csv"
@@ -148,7 +148,9 @@ print("\n Started  to save to json ... ")
 species_avg.to_json("species_avg.json", indent=2)
 print("✅ Saved it as species_avg.json")
 
-##  **Task 5: Advanced Formatting**
+#===============================================================
+#  Task 5: Advanced Formatting
+#===============================================================
 # Save with custom formatting and conditions
 
 # Sample financial data
@@ -168,11 +170,11 @@ financial_data = pd.DataFrame({
 # 4. Save summary statistics as JSON
 
 
-
-##  **Task 6: Data Pipeline Simulation**
+#===============================================================
+#  Task 6: Data Pipeline Simulation
+#===============================================================
 # Complete data processing pipeline
 
-"""python
 # Simulate a real-world scenario
 raw_customers = pd.DataFrame({
     'customer_id': [1, 2, 3, 4, 5, 6],
@@ -193,13 +195,13 @@ raw_customers = pd.DataFrame({
 #    - City summary as Excel
 #    - Both as separate sheets in one Excel file
 #    - JSON file with city statistics
-"""
 
 
-## **Task 7: Error Handling & Best Practices**
+#===============================================================
+# Task 7: Error Handling & Best Practices
+#===============================================================
 # Practice robust file operations**
 
-"""python
 # Create sample data
 inventory = pd.DataFrame({
     'item_id': ['A001', 'A002', 'A003', 'A004'],
@@ -213,10 +215,10 @@ inventory = pd.DataFrame({
 # 2. Check if file already exists before saving
 # 3. Create a backup system: save with timestamp in filename
 # 4. Save with different encodings (utf-8, latin1)
-"""
 
-
-##  **Solution Checklist**
+#===============================================================
+#  Solution Checklist
+#===============================================================
 """
 After each task, verify:
 - [ ] File was created successfully
@@ -226,7 +228,9 @@ After each task, verify:
 - [ ] Special characters handled properly
 """
 
-##  **Bonus Challenge**
+#===============================================================
+# Bonus Challenge
+#===============================================================
 """
 Create your own dataset about something you're interested in (movies, games, sports) and:
 1. Save it in 3 different formats
