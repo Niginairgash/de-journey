@@ -1,6 +1,8 @@
 import pandas as pd
 
+#===============================================================
 # Task 1: Basic File Reading
+#===============================================================
 # Create these CSV files and practice reading them:
 
 # students.csv
@@ -24,7 +26,9 @@ df = pd.read_csv(r"D:\Data engineering\de-journey\2-data-processing\pandas\stude
 first_3_rows = df.head(3)
 check = df.shape
 
+#===============================================================
 # Task 2: Handle Different File Formats
+#===============================================================
 # Create these files and read them:
 
 # products.tsv (Tab Separated)
@@ -52,8 +56,9 @@ df_from_tsv = pd.read_csv(r"D:\Data engineering\de-journey\2-data-processing\pan
 df_from_txt = pd.read_csv(r"D:\Data engineering\de-journey\2-data-processing\pandas\data.txt", sep=";")
 is_shapes = df_from_tsv.shape == df_from_txt.shape
 
-
+#===============================================================
 # Task 3: Real Excel File Practice
+#===============================================================
 # Create an Excel file `sales.xlsx` with two sheets:
 
 # Sheet1 (January):
@@ -91,9 +96,9 @@ combine_df = pd.concat([df_january, df_fabruary])
 print(combine_df)
 print(f"\nCombined shape:{combine_df.shape}")
 
-
+#===============================================================
 # Task 4: Problem Solving - Tricky Files
-
+#===============================================================
 # Create this "messy" CSV file `messy_data.csv`:
 """ csv
 This is some header info
@@ -121,8 +126,9 @@ print(f"\n {df_skip_last_lines}")
 names_and_dep = pd.read_csv(r"D:\Data engineering\de-journey\2-data-processing\pandas\messy_data.csv")
 print(f"\nNames: \n {names_and_dep[['Name', 'Department']]}")
 
-
+#===============================================================
 # Task 5: File Exploration**
+#===============================================================
 """
 Download a real dataset and practice:
 1. Go to [Kaggle](https://www.kaggle.com/datasets) and download any small CSV dataset
@@ -145,7 +151,9 @@ print(f"\n Rows: {rows_columns[0]}, colunns: {rows_columns[1]}")
 print(f"\n Columns name: {salary_2024.columns.to_list()}")
 print(f"\n Type of data: {type(salary_2024)}")
 
+#===============================================================
 # Task 6: Advanced Challenges
+#===============================================================
 
 # Create `employee_data.csv`
 """ csv
