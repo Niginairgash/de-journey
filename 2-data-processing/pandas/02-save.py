@@ -1,13 +1,11 @@
 import pandas as pd
 import os
 from datetime import datetime
-
+import numpy as np
 
 ##  **Task 1: Basic File Saving**
 # Create and save a simple DataFrame
 
-""" python
-import pandas as pd
 
 # Create a sample DataFrame
 df = pd.DataFrame({
@@ -17,20 +15,28 @@ df = pd.DataFrame({
     'Category': ['Electronics', 'Accessories', 'Accessories', 'Electronics']
 })
 
+""" python
 # todo:
 # 1. Save as CSV without index
 # 2. Save as Excel file
 # 3. Save as JSON with pretty formatting
 """
+timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
 def save_to_csv():
-    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     df.to_csv(f'backup_data_{timestamp}.csv', index=False)
 
-##  **Task 2: Save Processed Data**
+def save_to_exel():
+    df.to_excel(f'backup_data_{timestamp}.xlsx', index=False)
+
+def save_to_json():
+    print("Started creating json file")
+    df.to_json(f"backup_data_{timestamp}.json", index=False)
+    print("Successuful ")
+
+
+##  Task 2: Save Processed Data
 # Read, clean, and save modified data
 
-"""python
-# Start with this "messy" data
 messy_sales = pd.DataFrame({
     'OrderID': [101, 102, 103, 104, 105],
     'Customer': ['Alice', 'Bob', 'Charlie', 'Diana', 'Eve'],
@@ -38,18 +44,40 @@ messy_sales = pd.DataFrame({
     'Date': ['2024-01-15', '2024-01-16', '2024-01-17', '2024-01-18', '2024-01-19']
 })
 
-# Your tasks:
+# todo:
 # 1. Fill missing values with the average amount
 # 2. Filter orders above $170
 # 3. Save the cleaned data as CSV
 # 4. Save only Customer and Amount columns as Excel
-"""
+
+average_amount = messy_sales['Amount'].mean()
+print(f"\n Average amount: {average_amount}")
+
+messy_sales_filled = messy_sales.copy()
+
+print("\n 1.Fill missing values with the average amount")
+messy_sales_filled['Amount'] = messy_sales_filled['Amount'].fillna(average_amount)
+print("\n Data after filing missing values:")
+print(messy_sales_filled)
+
+print("\n === 2. Filter orders above $170")
+filtered_orders = messy_sales[messy_sales['Amount'] > 170]
+print(filtered_orders)
+
+print("\n === 3. Save the cleaned data as CSV")
+filtered_orders.to_csv("cleaned_sales_data.csv", index=False)
+print("✅ Saved cleaned data as cleaned_sales_data.csv")
 
 
-## 📊 **Task 3: Multiple DataFrames to One File**
-# Create and save multiple sheets in one Excel file
+print("\n === 4.Save only Customer and Amount columns as Excel")
+messy_sales[['Customer', 'Amount']].to_excel("customer_amount.xlsx", index=False)
+print("✅ Saved Customer and Amount as customer_amount.xlsx")
 
-"""python
+
+# Task 3: Multiple DataFrames to One File
+#Create and save multiple sheets in one Excel file
+
+
 # Create sample data for different departments
 hr_data = pd.DataFrame({
     'Employee': ['John', 'Sarah', 'Mike', 'Lisa'],
@@ -69,34 +97,60 @@ sales_data = pd.DataFrame({
     'Target': [100000, 120000]
 })
 
-# Your tasks:
+
+# todo:
 # 1. Save all three DataFrames to one Excel file, each in separate sheets
 # 2. Name the sheets: 'HR', 'IT', 'Sales'
 # 3. Don't include index in any sheet
-"""
 
+with pd.ExcelWriter("departments.xlsx") as writer:
+    hr_data.to_excel(writer, sheet_name='HR', index=False)
+    it_data.to_excel(writer, sheet_name='IT', index=False)
+    sales_data.to_excel(writer, sheet_name='Sales', index=False)
+print("✅ departments.xlsx created")
 
 ##  **Task 4: Real Dataset Processing**
 # Download and process a real dataset
 
-"""python
+
 # Use this URL or any dataset you have
-url = "https://raw.githubusercontent.com/datasets/iris/master/data/iris.csv"
+url = "https://raw.githubusercontent.com/Niginairgash/de-journey/main/2-data-processing/pandas/iris.csv"
 
 # todo:
 # 1. Read the iris dataset from the URL
 # 2. Save it locally as CSV
-# 3. Filter only 'setosa' species
+# 3. Filter only 'Iris-setosa' species
 # 4. Save the filtered data as Excel
 # 5. Calculate average measurements per species and save as JSON
-"""
 
+read = pd.read_csv(url, sep="\t")
+print("Origin data from URL")
+print(read)
 
+print("\n started saving to csv ...")
+read.to_csv("local_iris.csv", index=False)
+print("✅ Saved it locally as local_iris.csv")
+
+print("\n === Filtered data, only 'Iris-setosa' ")
+save_to_excel = read[read['Species'] == 'Iris-setosa']
+print(save_to_excel)
+
+print("\n Started saving to excel ... ")
+save_to_excel.to_excel("filtered_iris.xlsx", index=False)
+print("✅ Saved it as filtered_iris.xlsx")
+
+print("\n ==== Calculate Average and Save to json")
+print("\n Average measurements per species:")
+species_avg = read.groupby('Species').mean()
+print(species_avg)
+
+print("\n Started  to save to json ... ")
+species_avg.to_json("species_avg.json", indent=2)
+print("✅ Saved it as species_avg.json")
 
 ##  **Task 5: Advanced Formatting**
 # Save with custom formatting and conditions
 
-"""python
 # Sample financial data
 financial_data = pd.DataFrame({
     'Month': ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
@@ -105,14 +159,14 @@ financial_data = pd.DataFrame({
     'Profit': [15000, 16000, 10000, 18000, 21000, 19500]
 })
 
-# Your tasks:
+# tasks:
 # 1. Calculate profit margin (Profit/Revenue) and add as new column
 # 2. Save as CSV with only 2 decimal places for numeric columns
 # 3. Create two separate files: 
 #    - High performance months (Profit > 17000)
 #    - Low performance months (Profit <= 17000)
 # 4. Save summary statistics as JSON
-"""
+
 
 
 ##  **Task 6: Data Pipeline Simulation**
