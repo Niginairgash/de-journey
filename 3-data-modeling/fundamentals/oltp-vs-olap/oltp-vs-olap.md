@@ -54,41 +54,10 @@ Now, imagine the store manager in a back office at the end of the month.
 **TL;DR:**
 *   **OLTP** is for **DOING** (making a sale, updating a record).
 *   **OLAP** is for **KNOWING** (analyzing trends, making decisions).
-
+  
 ---
 
-### **OLTP vs. OLAP: A Complete Breakdown**
-
-At the core, **OLTP** and **OLAP** are two types of database systems designed for completely different purposes. The simplest way to remember the difference is:
-
-*   **OLTP** is for **running the business**.
-*   **OLAP** is for **analyzing the business**.
-
-Let's dive into the details.
-
-#### **1. The Core Difference Between OLTP and OLAP**
-
-| Feature | **OLTP (Online Transactional Processing)** | **OLAP (Online Analytical Processing)** |
-| :--- | :--- | :--- |
-| **Purpose** | To manage and process day-to-day **transactions** in real-time. | To perform complex **analysis** and reporting on large volumes of historical data. |
-| **Primary Goal** | **Data Processing** (Insert, Update, Delete). Speed and data integrity are critical. | **Data Analysis** (Querying and Reporting). Query speed for large datasets is critical. |
-| **Data Source** | The single source of truth for all current operational data. | Data is consolidated from multiple **OLTP systems** and other sources. |
-| **Data Content** | Manages **current, detailed, and highly granular data**. | Stores **historical, summarized, and consolidated data**. |
-| **Queries** | Short, simple, and standardized (e.g., `UPDATE user SET balance=...`). | Long, complex, and ad-hoc (e.g., `SUM(sales) by region and product for the last 5 years`). |
-| **Users** | Clerks, cashiers, customer service reps, developers (operational staff). | Business analysts, data scientists, executives (decision-makers). |
-| **Workload** | High volume of small, fast read/write operations. | Low volume of complex, long-running read-heavy queries. |
-| **Example** | A bank's ATM withdrawal, an e-commerce order, a new user registration. | A report on quarterly sales trends, customer segmentation analysis. |
-
----
-
-#### **2. Data Models in Each System**
-
-*   **OLTP Systems:** Use a **Normalized Data Model** (typically 3rd Normal Form - 3NF).
-*   **OLAP Systems:** Use a **Dimensional Model** (Star Schema or Snowflake Schema).
-
----
-
-#### **3. Why Normalization = OLTP**
+#### ** Why Normalization = OLTP**
 
 Normalization is the process of structuring a database to reduce data redundancy and improve data integrity. It involves breaking down a table into smaller, related tables and linking them with foreign keys.
 
@@ -108,7 +77,7 @@ This is efficient for processing a new order. However, for analysis, a query to 
 
 ---
 
-#### **4. Why Star/Snowflake Schema = OLAP**
+#### ** Why Star/Snowflake Schema = OLAP**
 
 A dimensional model is designed specifically for querying and analysis, not for transaction processing. The two main types are the **Star Schema** and the **Snowflake Schema**.
 
@@ -140,3 +109,6 @@ To answer "What were the total sales of 'Beverage' products in 'Q1 2023'?"
 | **Data Model** | **Normalized** (3NF) for integrity and efficient writes | **Dimensional** (Star/Snowflake) for fast and easy reads |
 | **Data State** | Current, transactional data | Historical, consolidated data |
 | **Analogy** | **The Cashier** at the checkout line, processing each item. | **The Store Manager** in the back office, looking at sales reports from all cashiers to decide what to reorder. |
+
+
+
