@@ -57,7 +57,7 @@ Now, imagine the store manager in a back office at the end of the month.
   
 ---
 
-#### ** Why Normalization = OLTP**
+#### **Why Normalization = OLTP**
 
 Normalization is the process of structuring a database to reduce data redundancy and improve data integrity. It involves breaking down a table into smaller, related tables and linking them with foreign keys.
 
@@ -77,7 +77,7 @@ This is efficient for processing a new order. However, for analysis, a query to 
 
 ---
 
-#### ** Why Star/Snowflake Schema = OLAP**
+#### **Why Star/Snowflake Schema = OLAP**
 
 A dimensional model is designed specifically for querying and analysis, not for transaction processing. The two main types are the **Star Schema** and the **Snowflake Schema**.
 
