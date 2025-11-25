@@ -38,6 +38,17 @@ print(category_electronics)
 3.2 Find products with Rating above 4.5 AND Stock above 40  
 3.3 Find products that are either Audio OR Accessories
 """
+print("\n === Electronics products priced under $1000 ")
+price_under_1000 = df[(df['Category']=='Electronics') & (df['Price'] < 1000) ]
+print(price_under_1000)
+
+print("\n === Products with Rating above 4.5 AND Stock above 40")
+rating_stock = df[(df['Rating'] > 4.5) & (df['Stock'] > 40) ]
+print(rating_stock)
+
+print("\n === Products that are either Audio OR Accessories")
+either_audio_accessories = df[(df['Category'] != 'Audio') | (df['Category'] != 'Accessories') ]
+print(either_audio_accessories)
 
 #===============================================================
 # Task 4: Using isin()**
@@ -46,15 +57,33 @@ print(category_electronics)
 4.1 Find products that are either 'Laptop', 'Tablet', or 'Monitor'  
 4.2 Find products in categories 'Audio' or 'Accessories'
 """
+print("\n === Products that are either 'Laptop', 'Tablet', or 'Monitor'")
+products = df[df['Product'].isin(['Laptop', 'Tablet', 'Monitor'])]
+print(products)
+
+print("\n === Products in categories 'Audio' or 'Accessories'")
+filtered_category = df[df['Category'].isin(['Audio', 'Accessories'])]
+print(filtered_category)
 
 #===============================================================
-# Task 5: String Operations**
+# Task 5: String Operations
 #===============================================================
 """
 5.1 Find products whose names start with 'M'  
 5.2 Find products whose names contain 'phone'  
 5.3 Find products with names longer than 6 characters
 """
+print("\n === Products whose names start with 'M'")
+start_with_m = df[df['Product'].str.startswith('M')]
+print(start_with_m)
+
+print("\n === Products whose names contain 'phone'")
+contain_phone = df[df['Product'].str.contains('phone')]
+print(contain_phone)
+
+print("\n === Products with names longer than 6 characters")
+long_character = df[df['Product'].str.len() > 6]
+print(long_character)
 
 #===============================================================
 # Task 6: Complex Combinations**
