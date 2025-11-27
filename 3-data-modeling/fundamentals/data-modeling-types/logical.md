@@ -75,44 +75,8 @@ Let's add detailed attributes to each of our entities:
 - `ProductID` (Foreign Key, part of composite PK)
 - `CategoryID` (Foreign Key, part of composite PK)
 
-### Step 3: Let's Create the Logical Diagram in draw.io
-
-Here's how to transform your conceptual diagram:
-
-#### **New Tables to Add:**
-```
-[Order_Product]    [Product_Category]
-```
-
-#### **Updated Relationships:**
-- **Order** → **Order_Product** (1-to-Many)
-- **Product** → **Order_Product** (1-to-Many)
-- **Product** → **Product_Category** (1-to-Many)
-- **Category** → **Product_Category** (1-to-Many)
-
-### Step 4: Complete Logical Model Structure
-
-```
-[Customer]────(1)───< (0..*) >───[Order]
-  | 1                            | 1
-  | |                            | |
-  | └──< (0..*) >──[Review]──> (0..*) 
-  | 1                  |          1
-  |                    |          |
-[Supplier]─< (1..*) >─[Product]─< (0..*) >──[Category]
-                       |    |               |
-                       |    └───[Product_Category]──┘
-                       |
-                       └───[Order_Product]──┘
-```
-
-### Step 5: Key Changes from Conceptual Model
-
-1. **Added primary keys** to all entities
-2. **Added foreign keys** for relationships
-3. **Created junction tables** for M:N relationships
-4. **Defined all attributes** with data types
-5. **Applied normalization** (no redundant data)
+### Logical Diagram 
+<img width="821" height="791" alt="logical Diagram" src="https://github.com/user-attachments/assets/7977a32c-57a3-418f-947c-be168f799f8a" />
 
 ## E-commerce Logical Data Model
 
@@ -138,5 +102,3 @@ Our logical model now includes:
 - ✅ Junction tables for M:N relationships
 
 **Next, we'll move to Physical Data Model** where we choose specific database technology (MySQL, PostgreSQL, etc.) and add performance optimizations!
-
-Would you like me to show you how to create this logical diagram in draw.io, or shall we proceed directly to the physical model?
