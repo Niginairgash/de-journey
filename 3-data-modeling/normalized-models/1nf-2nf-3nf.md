@@ -133,3 +133,6 @@ The key is `Order`.
 *   **3NF:** Every fact is a fact about *only* the key, and no other facts.
 
 By following these rules, we organized our messy list into a clean, efficient database where information is stored only once!
+
+From youtube all kind of Normalized model:
+https://www.youtube.com/watch?v=zqQxWdTpSIA
