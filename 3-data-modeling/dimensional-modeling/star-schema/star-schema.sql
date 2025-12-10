@@ -49,43 +49,6 @@ CREATE TABLE dim_customer (
 );
 
 
--- Technical Characteristics
-
--- 1. Primary Key Structure
-
--- Fact Table PK: Composite of all dimension FKs
---               (date_key, product_key, customer_key, store_key)
-               
---Dimension PK:  Single surrogate key (customer_key)
-
-
--- 2. Referential Integrity**
-
--- All fact table FKs must point to valid dimension records
-ALTER TABLE fact_sales ADD CONSTRAINT fk_product
-    FOREIGN KEY (product_key) REFERENCES dim_product(product_key);
-
--- Snowflake vs Star (avoid this in pure star schema):
--- Star:   fact → dim_product (category included in dim_product)
--- Snowflake: fact → dim_product → dim_category (normalized)
-
-
--- 3. Indexing Strategy**
-
--- Fact Table Indexes:
-CREATE CLUSTERED INDEX idx_fact_sales_date 
-    ON fact_sales(date_key);  -- Most queries filter by date
-
-CREATE NONCLUSTERED INDEX idx_fact_sales_product 
-    ON fact_sales(product_key) INCLUDE (sales_amount, quantity);
-
--- Dimension Table Indexes:
-CREATE INDEX idx_dim_customer_natural 
-    ON dim_customer(customer_id, start_date, end_date);
-
--- Query Performance Patterns
-
--- Star Join Optimization:
 
 -- Typical star query pattern
 SELECT 
