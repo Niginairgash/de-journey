@@ -1,8 +1,4 @@
-Here is **SCD2 explained in a very simple way**:
-
----
-
-# 🟩 **SCD2 — Simple Explanation**
+# 🟩 **SCD2**
 
 **SCD2 means: every time a value changes, we create a NEW ROW and keep the old one.
 We store FULL HISTORY.**
