@@ -29,37 +29,37 @@ If Zebo moves again to Bokhtar:
 
 ### After second change:
 
-| ID | Name | City (Current) | City (Previous) |
-| -- | ---- | -------------- | --------------- |
-| 1  | Ali  | Bokhtar        | Khujand         |
+| ID | Name  | City (Current) | City (Previous) |
+| -- | ----- | -------------- | --------------- |
+| 1  | Zebo  | Bokhtar        | Khujand         |
 
 Oldest history is lost.
-You only keep **limited history (1 step back)**.
+We only keep **limited history (1 step back)**.
 
 ---
 
 # 🧠 What SCD3 does:
 
-✔ Stores current value
-✔ Stores previous value(s)
-✔ Keeps **limited** history
-✔ No new rows (same record)
-✔ Easy to query
+* ✔ Stores current value
+* ✔ Stores previous value(s)
+* ✔ Keeps **limited** history
+* ✔ No new rows (same record)
+* ✔ Easy to query
 
 ---
 
 # 🟥 What SCD3 does NOT do:
 
-❌ No full history
-❌ Does not track every change
-❌ Loses older values after each update
-❌ No start/end date range like SCD2
+* ❌ No full history
+* ❌ Does not track every change
+* ❌ Loses older values after each update
+* ❌ No start/end date range like SCD2
 
 ---
 
 # 🎯 When is SCD3 used?
 
-* When you need **only the last known value**, not full history
+* When we need **only the last known value**, not full history
 * When business wants to compare “current vs previous”
 * When table must remain small and simple
 
