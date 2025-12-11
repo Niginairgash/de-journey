@@ -33,19 +33,19 @@ We **close** the old version and **create a new one**.
 
 # 🧠 What SCD2 does:
 
-✔ Keeps **full history**
-✔ Stores **old versions**
-✔ Always creates **new row**
-✔ Uses **start/end dates**
-✔ Allows us to know *when a value changed*
+* ✔ Keeps **full history**
+* ✔ Stores **old versions**
+* ✔ Always creates **new row**
+* ✔ Uses **start/end dates**
+* ✔ Allows us to know *when a value changed*
 
 ---
 
 # 🟥 What SCD2 does NOT do:
 
-❌ It does NOT overwrite data
-❌ It does NOT lose old values
-❌ It does NOT store only the latest data (that’s SCD1)
+* ❌ It does NOT overwrite data
+* ❌ It does NOT lose old values
+* ❌ It does NOT store only the latest data (that’s SCD1)
 
 ---
 
