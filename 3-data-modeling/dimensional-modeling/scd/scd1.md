@@ -1,8 +1,5 @@
-Here is **SCD1 explained in a very simple way**:
 
----
-
-## 🟦 **SCD1 (Slowly Changing Dimension Type 1) — VERY SIMPLE Explanation**
+## 🟦 **SCD1 (Slowly Changing Dimension Type 1)**
 
 **SCD1 means: just replace the old value with the new value.
 No history. No past versions. Only the latest state.**
