@@ -55,8 +55,3 @@ If our phone number changes, our bank updates the number.
 They don’t store all past numbers — they **just keep the latest**.
 
 That’s SCD1.
-
----
-
-If you want, I can also explain **SCD2 in simple way**.
-
