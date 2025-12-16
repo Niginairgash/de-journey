@@ -3,8 +3,6 @@
 
 **A Hub stores a unique business thing.**
 
-That’s it.
-
 ---
 
 ## Think like this
@@ -95,6 +93,7 @@ hub_customer (
 ## One-sentence rule to remember
 
 > **If it uniquely identifies a business entity → it belongs in a Hub**
+
 
 
 
