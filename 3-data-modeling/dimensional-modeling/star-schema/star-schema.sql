@@ -24,29 +24,18 @@ CREATE TABLE fact_sales (
 
 
 --2. Dimension Tables
--- Slowly Changing Dimensions (SCD) Type 2 Example
-CREATE TABLE dim_customer (
-    -- Surrogate Key (artificial, stable)
-    customer_key     INT PRIMARY KEY IDENTITY(1,1),
-    -- Natural/Business Key (from source system)
-    customer_id      VARCHAR(20) NOT NULL,
-    -- Attributes (descriptive data)
-    customer_name    VARCHAR(100),
-    customer_segment VARCHAR(50),
-    city             VARCHAR(50),
-    region           VARCHAR(50),
-    -- SCD Type 2 columns
-    start_date       DATE NOT NULL,
-    end_date         DATE DEFAULT '9999-12-31',
-    is_current       BIT DEFAULT 1,
-    version_number   INT DEFAULT 1,
-    -- Audit columns
-    created_date     TIMESTAMP,
-    updated_date     TIMESTAMP,
-    -- Indexes (for performance)
-    INDEX idx_natural_key (customer_id, start_date),
-    INDEX idx_current (is_current)
-);
+-- Slowly Changing Dimensions (SCD) Type 2 
+create  table core.dim_inventory(
+	inventory_pk integer not null,
+	inventory_id integer not null,
+	film_id integer not null,
+	title varchar(255) not null,
+	rentel_duration int2 not null,
+	rental_rate numeric(4, 2) not null,
+	length int2,
+	rating varchar(10),
+	primary key(inventory_pk)
+)
 
 
 
