@@ -204,3 +204,8 @@ VALUES
 (76,'Lakkalikööri',23,18.00,'500 ml',false),
 (77,'Original Frankfurter grüne Soße',12,13.00,'12 boxes',false),
 (78,'Stroopwafels',22,9.75,'24 pieces',false);
+
+
+INSERT INTO "order"(order_id,orderDate,orderNumber,customer_id,totalAmount)
+VALUES
+(1,TO_TIMESTAMP('Jul  4 2012 12:00:00:000AM', 'Mon DD YYYY HH12:MI:SS:MSAM'),85,440.00,'542378')
