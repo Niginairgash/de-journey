@@ -1,4 +1,4 @@
-INSERT INTO customer(customer_id, firstName, lastName, city, country, phone)
+INSERT INTO customer(customer_id, first_name, last_name, city, country, phone)
 values
 (1,'Maria','Anders','Berlin','Germany','030-0074321'),
 (2,'Ana','Trujillo','México D.F.','Mexico','(5) 555-4729'),
@@ -92,7 +92,7 @@ values
 (90,'Matti','Karttunen','Helsinki','Finland','90-224 8858'),
 (91,'Zbyszek','Piestrzeniewicz','Warszawa','Poland','(26) 642-7012');
 
-INSERT INTO supplier(supplier_id,companyName,contactName,city,country,phone,fax)
+INSERT INTO supplier(supplier_id,company_name,contact_name,city,country,phone,fax)
 VALUES
 (1,'Exotic Liquids','Charlotte Cooper','London','UK','(171), 555-2222',NULL),
 (2,'New Orleans Cajun Delights','Shelley Burke','New Orleans','USA','(100) 555-4822',NULL),
@@ -124,7 +124,7 @@ VALUES
 (28,'Gai pâturage','Eliane Noz','Annecy','France','38.76.98.06','38.76.98.58'),
 (29,'Forêts d''érables','Chantal Goulet','Ste-Hyacinthe','Canada','(514) 555-2955','(514) 555-2921');
 
-INSERT INTO product(product_id,productName,supplierId,unitPrice,package,isDiscontinued)
+INSERT INTO product(product_id,product_name,supplier_id,unit_price,package,is_discontinued)
 VALUES
 (1,'Chai',1,18.00,'10 boxes x 20 bags',false),
 (2,'Chang',1,19.00,'24 - 12 oz bottles',false),
@@ -206,7 +206,7 @@ VALUES
 (78,'Stroopwafels',22,9.75,'24 pieces',false);
 
 
-INSERT INTO "order"(order_id,orderDate,orderNumber,customer_id,totalAmount)
+INSERT INTO "order"(order_id,order_date,order_number,customer_id,total_amount)
 VALUES
 (1,TO_TIMESTAMP('Jul  4 2012 12:00:00:000AM', 'Mon DD YYYY HH12:MI:SS:MSAM'),85,440.00,'542378'),
 (2,TO_TIMESTAMP('Jul  5 2012 12:00:00:000AM','Mon DD YYYY HH12:MI:SS:MSAM'),79,1863.40,'542379'),
@@ -1039,7 +1039,7 @@ VALUES
 (829,TO_TIMESTAMP('May  6 2014 12:00:00:000AM', 'Mon DD YYYY HH12:MI:SS:MSAM'),9,1057.00,'543206'),
 (830,TO_TIMESTAMP('May  6 2014 12:00:00:000AM', 'Mon DD YYYY HH12:MI:SS:MSAM'),65,1374.60,'543207');
 
-INSERT INTO orderItem(orderItem_id,order_id,product_id,unitPrice,quantity)
+INSERT INTO order_item(order_item_id,order_id,product_id,unit_price,quantity)
 VALUES(1,1,11,14.00,12),
 (2,1,42,9.80,10),
 (3,1,72,34.80,5),
