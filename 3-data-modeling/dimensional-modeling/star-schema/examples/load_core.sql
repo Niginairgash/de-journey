@@ -29,3 +29,21 @@ where dc.customer_id = c.customer_id
 		or 	dc.country 	   <> c.country 
 		or  dc.phone 	   <> c.phone 
 	);
+insert into core.dim_customer (customer_id, first_name, last_name, city, country, phone, start_dt)
+select 
+	customer_id ,
+	first_name ,
+	last_name ,
+	city ,
+	country ,
+	phone,
+	current_timestamp as start_dt 
+from public.customer c 
+join core.dim_customer dc on dc.customer_id = c.customer_id
+where 
+	dc.is_current = false
+	and dc.end_dt = (
+		select max(end_dt)
+		from core.dim_customer 
+		where c.customer_id = dc.customer_id 
+	)
