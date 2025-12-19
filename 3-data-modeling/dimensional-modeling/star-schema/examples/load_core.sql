@@ -16,16 +16,16 @@ where not exists(
 		and dc.is_current = true
 )
 
-update dim_customer dc
+update core.dim_customer dc
 set end_dt = current_timestamp, 
 	is_current = false 
 from public.customer c
 where dc.customer_id = c.customer_id 
 	and is_current = true
 	and(
-			dc.first_name  = c.first_name 
-		or	dc.last_name   = c.last_name
-		or  dc.city        = c.city 
-		or 	dc.country 	   = c.country 
-		or  dc.phone 	   = c.phone 
+			dc.first_name  <> c.first_name 
+		or	dc.last_name   <> c.last_name
+		or  dc.city        <> c.city 
+		or 	dc.country 	   <> c.country 
+		or  dc.phone 	   <> c.phone 
 	);
