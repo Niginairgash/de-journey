@@ -14,5 +14,10 @@ join core.dim_product dp on dp.product_id = oi.product_id
 		and dp.is_current = true
 join core.dim_date dd on dd.full_date = o.order_date 
 where not exists (
-
+	select 1
+	from core.fact_sales f
+	where 
+		f.customer_fk = dc.customer_pk
+		and f.product_fk = dp.product_pk
+		and f.date_pk = dd.date_pk
 )
