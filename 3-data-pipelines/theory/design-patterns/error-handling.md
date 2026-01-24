@@ -130,3 +130,5 @@ Typical approach:
 * Success → move forward
 
 https://medium.com/data-engineering-technical-standards-and-best/error-handling-retry-logic-n-data-engineering-5e1922be8b01
+
+https://dataengineeringcentral.substack.com/p/error-handling-for-data-engineers
